@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaEscolarNotas", "sistemaEscolarNotas\sistemaEscolarNotas.csproj", "{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Web", "1. Web", "{B3A0741F-6764-4111-89F7-6B0B7D9A19DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D} = {B3A0741F-6764-4111-89F7-6B0B7D9A19DA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E43B659-A5DC-41FC-9821-E00EC4F7FE60}
+	EndGlobalSection
+EndGlobal
