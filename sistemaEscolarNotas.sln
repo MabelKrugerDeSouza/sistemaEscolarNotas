@@ -3,9 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaEscolarNotas", "sistemaEscolarNotas\sistemaEscolarNotas.csproj", "{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaEscolarNotas.Web", "sistemaEscolarNotas\sistemaEscolarNotas.Web.csproj", "{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Web", "1. Web", "{B3A0741F-6764-4111-89F7-6B0B7D9A19DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{7F970D10-38DA-4F2C-A818-B6EA5C971155}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{36635347-3046-4CC0-8920-DCD96A23BA6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infra", "4. Infra", "{C72B36D5-AB91-401B-8863-FC2C08D30EE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Tests", "5. Tests", "{52402FF7-3AF9-4250-A2A2-0839A5EDE1E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaEscolarNotas.Application", "sistemaEscolarNotas.Application\sistemaEscolarNotas.Application.csproj", "{54B8FE6A-14B9-4C5F-9843-CD5F572CEC79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaEscolarNotas.Domain", "sistemaEscolarNotas.Domain\sistemaEscolarNotas.Domain.csproj", "{8482545B-0552-483A-B44D-621EDFF0A80B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaEscolarNotas.Infra", "sistemaEscolarNotas.Infra\sistemaEscolarNotas.Infra.csproj", "{47985A96-3ED9-4F6F-B7AF-9134BF077D5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaEscolarNotas.Tests", "sistemaEscolarNotas.Tests\sistemaEscolarNotas.Tests.csproj", "{EFF5E3CF-223F-47D1-9B00-3F6FE7E30C0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +33,32 @@ Global
 		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54B8FE6A-14B9-4C5F-9843-CD5F572CEC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54B8FE6A-14B9-4C5F-9843-CD5F572CEC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54B8FE6A-14B9-4C5F-9843-CD5F572CEC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54B8FE6A-14B9-4C5F-9843-CD5F572CEC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8482545B-0552-483A-B44D-621EDFF0A80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8482545B-0552-483A-B44D-621EDFF0A80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8482545B-0552-483A-B44D-621EDFF0A80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8482545B-0552-483A-B44D-621EDFF0A80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47985A96-3ED9-4F6F-B7AF-9134BF077D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47985A96-3ED9-4F6F-B7AF-9134BF077D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47985A96-3ED9-4F6F-B7AF-9134BF077D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47985A96-3ED9-4F6F-B7AF-9134BF077D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF5E3CF-223F-47D1-9B00-3F6FE7E30C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF5E3CF-223F-47D1-9B00-3F6FE7E30C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF5E3CF-223F-47D1-9B00-3F6FE7E30C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF5E3CF-223F-47D1-9B00-3F6FE7E30C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{30A7788D-8A16-4F8B-B7BA-5F581C16A39D} = {B3A0741F-6764-4111-89F7-6B0B7D9A19DA}
+		{54B8FE6A-14B9-4C5F-9843-CD5F572CEC79} = {7F970D10-38DA-4F2C-A818-B6EA5C971155}
+		{8482545B-0552-483A-B44D-621EDFF0A80B} = {36635347-3046-4CC0-8920-DCD96A23BA6B}
+		{47985A96-3ED9-4F6F-B7AF-9134BF077D5C} = {C72B36D5-AB91-401B-8863-FC2C08D30EE2}
+		{EFF5E3CF-223F-47D1-9B00-3F6FE7E30C0C} = {52402FF7-3AF9-4250-A2A2-0839A5EDE1E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8E43B659-A5DC-41FC-9821-E00EC4F7FE60}
