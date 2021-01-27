@@ -1,4 +1,6 @@
-﻿using sistemaEscolarNotas.Domain.Entities;
+﻿using FluentValidation;
+using sistemaEscolarNotas.Domain.Entities;
+using sistemaEscolarNotas.Domain.Validation;
 
 namespace sistemaEscolarNotas.Domain
 {
@@ -9,10 +11,39 @@ namespace sistemaEscolarNotas.Domain
         public string CPF { get; set; }
         public string Telefone { get; set; }
 
-        public AlunoEntity()
+        private AlunoEntity()
         {
         }
 
-        //public void Update
+        public AlunoEntity(string nome, string email, string cpf, string telefone)
+        {
+            NomeAluno = nome;
+            Email = email;
+            CPF = cpf;
+            Telefone = telefone;
+
+            Validate();
+        }
+
+        public void Update(string nome, string email, string cpf, string telefone)
+        {
+            NomeAluno = nome;
+            Email = email;
+            CPF = cpf;
+            Telefone = telefone;
+
+            Validate();
+        }
+
+        public void Delete()
+        {
+            Deletado = true;
+        }
+
+        public void Validate()
+        {
+            var alunoValidator = new AlunoValidator();
+            alunoValidator.ValidateAndThrow(this);
+        }
     }
 }

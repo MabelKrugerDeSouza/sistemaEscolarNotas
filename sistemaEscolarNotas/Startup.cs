@@ -1,15 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using sistemaEscolarNotas.Application;
+using sistemaEscolarNotas.Application.Service;
+using sistemaEscolarNotas.Infra.Context;
 
 namespace sistemaEscolarNotas
 {
@@ -24,6 +21,13 @@ namespace sistemaEscolarNotas
 
         public void ConfigureServices(IServiceCollection services)
         {
+            AddDbContextCollection(services);
+
+            services.AddScoped<IAlunoService, AlunoService>();
+           // services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+           // services.AddScoped<ICategoriaServices, CategoriaServices>();
+           // services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+
             services.AddControllers();
             services.AddCors();
         }
@@ -45,6 +49,11 @@ namespace sistemaEscolarNotas
             {
                 endpoints.MapControllers();
             });
+        }
+        private void AddDbContextCollection(IServiceCollection services)
+        {
+            services.AddDbContext<MainContext>(opt => opt
+                .UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         }
     }
 }
