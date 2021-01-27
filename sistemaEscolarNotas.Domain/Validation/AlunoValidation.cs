@@ -28,46 +28,43 @@ namespace sistemaEscolarNotas.Domain.Validation
             RuleFor(f => f.CPF)
                .NotNull().WithMessage("CPF não pode ser nulo.")
                .NotEmpty().WithMessage("CPF não pode estar vazio.")
-               .Must(ValidateCpf).WithMessage("CPF incorreto.");
+               .Must(ValidateCPF).WithMessage("CPF incorreto.");
         }
 
-        private bool ValidateCpf(string cpf)
+        private bool ValidateCPF(string cpf)
         {
-            if (cpf == null)
-                throw new ValidationException("CPF é necessario.");
-
-            string digito1, digito2, cpfSemDigito;
-
-            cpf = Regex.Replace(cpf, "[^0-9]", string.Empty);
-
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string tempCpf;
+            string digito;
+            int soma;
+            int resto;
+            cpf = cpf.Trim();
+            cpf = cpf.Replace(".", "").Replace("-", "");
             if (cpf.Length != 11)
                 return false;
-
-            cpfSemDigito = cpf.Substring(0, 9);
-
-            digito1 = Modulo11(cpfSemDigito, 0);
-            cpfSemDigito = cpfSemDigito + digito1;
-            digito2 = digito1 + Modulo11(cpfSemDigito, 1);
-
-            return cpf.EndsWith(digito2);
-        }
-
-        private string Modulo11(string cpf, int posicao)
-        {
-            int soma, resto;
+            tempCpf = cpf.Substring(0, 9);
             soma = 0;
-            string multiplicador = "111098765432";
 
-            for (int i = 0; i < cpf.Length; i++)
-                soma += int.Parse(cpf[i].ToString()) * Convert.ToInt32(multiplicador.Substring(i + 1 - posicao, 1));
-
-            resto = (soma % 11);
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+            resto = soma % 11;
             if (resto < 2)
                 resto = 0;
             else
                 resto = 11 - resto;
-
-            return resto.ToString();
+            digito = resto.ToString();
+            tempCpf = tempCpf + digito;
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+            digito = digito + resto.ToString();
+            return cpf.EndsWith(digito);
         }
     }
 }
