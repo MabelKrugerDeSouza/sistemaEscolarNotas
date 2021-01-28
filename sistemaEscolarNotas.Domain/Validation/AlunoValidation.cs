@@ -8,20 +8,19 @@ namespace sistemaEscolarNotas.Domain.Validation
     {
         public AlunoValidator()
         {
-            CascadeMode = CascadeMode.StopOnFirstFailure;
+            CascadeMode = CascadeMode.Stop;
 
             RuleFor(a => a.NomeAluno)
-                .NotNull().WithMessage("Nome de aluno está nulo.")
+                .NotEmpty().WithMessage("Nome de aluno está nulo.")
                 .MinimumLength(3).WithMessage("Nome do aluno precisa no minimo 3 caracteres.")
-                .MaximumLength(50).WithMessage("Nome do aluno não pode conter mais de 50 caracteres.");
+                .MaximumLength(50).WithMessage("Nome do aluno deve conter no máximo 50 caracteres.");
 
             RuleFor(a => a.Email)
-                .NotNull().WithMessage("Email não pode ser nulo.")
-                .EmailAddress().WithMessage("Email incorreto. EX:exemplo@gmail.com.")
-                .MaximumLength(60).WithMessage("Email não pode conter mais de 60 caracteres.");
+                .NotEmpty().WithMessage("Email não pode ser nulo.")
+                .EmailAddress().WithMessage("Email incorreto. EX:exemplo@gmail.com.");
 
             RuleFor(a => a.Telefone)
-                .NotNull().WithMessage("Numero de telefone está nulo.")
+                .NotEmpty().WithMessage("Numero de telefone está nulo.")
                 .MinimumLength(10).WithMessage("Telefone deve conter exatamente 10 caracteres.")
                 .MaximumLength(11).WithMessage("Telefone deve conter exatamente 11 caracteres.");
 
