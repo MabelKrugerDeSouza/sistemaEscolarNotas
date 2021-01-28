@@ -96,7 +96,5 @@ namespace sistemaEscolarNotas.Web.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-
-
     }
 }
