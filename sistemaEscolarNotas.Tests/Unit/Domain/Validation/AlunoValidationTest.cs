@@ -25,7 +25,7 @@ namespace sistemaEscolarNotas.Tests.Unit.Domain.Validation
         [InlineData(51)]
         [InlineData(2)]
         [InlineData(null)]
-        public void Validar_NomeCategoria_Caracteres(int? qtdCaracteres)
+        public void Validar_NomeAluno_Caracteres(int? qtdCaracteres)
         {
             string nomeAluno = "";
             if (qtdCaracteres != null)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace sistemaEscolarNotas.Application.Common
 {
-    class AlunoException : Exception
+    public class AlunoException : Exception
     {
         public List<Errors> Errors { get; private set; }
 
