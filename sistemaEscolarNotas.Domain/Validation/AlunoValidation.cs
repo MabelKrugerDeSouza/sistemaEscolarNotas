@@ -25,7 +25,6 @@ namespace sistemaEscolarNotas.Domain.Validation
                 .MaximumLength(11).WithMessage("Telefone deve conter exatamente 11 caracteres.");
 
             RuleFor(f => f.CPF)
-               .NotNull().WithMessage("CPF não pode ser nulo.")
                .NotEmpty().WithMessage("CPF não pode estar vazio.")
                .Must(ValidateCPF).WithMessage("CPF incorreto.");
         }

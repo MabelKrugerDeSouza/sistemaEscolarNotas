@@ -6,7 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using sistemaEscolarNotas.Application;
 using sistemaEscolarNotas.Application.Service;
+using sistemaEscolarNotas.Domain.Interface;
 using sistemaEscolarNotas.Infra.Context;
+using sistemaEscolarNotas.Infra.Repository.Aluno;
 
 namespace sistemaEscolarNotas
 {
@@ -24,6 +26,7 @@ namespace sistemaEscolarNotas
             AddDbContextCollection(services);
 
             services.AddScoped<IAlunoService, AlunoService>();
+            services.AddScoped<IAlunoRepository, AlunoRepository>();
            // services.AddScoped<IFornecedorRepository, FornecedorRepository>();
            // services.AddScoped<ICategoriaServices, CategoriaServices>();
            // services.AddScoped<ICategoriaRepository, CategoriaRepository>();
